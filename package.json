@@ -13,6 +13,8 @@
     "bootstrap": "^5.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^6.21.2",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -21,8 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build", 
-    "deploy": "gh-pages -b gh-pages1 -d build" 
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b gh-pages1 -d build"
   },
   "eslintConfig": {
     "extends": [
