@@ -4,10 +4,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import VariantButtonGroup from './buttons';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <VariantButtonGroup/>
   </React.StrictMode>,
   document.getElementById('root')
 );
