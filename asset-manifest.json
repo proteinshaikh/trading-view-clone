@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/trading-view-clone/static/js/main.ab8ee616.js",
+    "index.html": "/trading-view-clone/index.html",
+    "main.ab8ee616.js.map": "/trading-view-clone/static/js/main.ab8ee616.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.ab8ee616.js"
+  ]
+}
