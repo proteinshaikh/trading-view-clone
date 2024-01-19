@@ -11,7 +11,7 @@ const Home = () => (
     <Grid container spacing={2}>
       <Grid item xs={12}>
         <Typography variant="h3" color="brown">
-        <p class="p3">Welcome to my notes on technology</p>
+        <p className="p3">Welcome to my notes on technology</p>
         </Typography>
       </Grid>
       <Grid item xs={12}>
@@ -22,14 +22,14 @@ const Home = () => (
       <Grid item xs={12}>
         <Link to="/java" style={{ textDecoration: 'none' }}>
           <Typography style={{ color: 'black', textDecoration: 'underline' }} fontWeight="bold">
-            <p class="p3">Java important notes</p>
+            <p className="p3">Java important notes</p>
           </Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
         <Link to="/hashmap" style={{ textDecoration: 'none' }}>
           <Typography style={{ color: 'black', textDecoration: 'underline' }} fontWeight="bold">
-          <p class="p3">how hashmap works</p>
+          <p className="p3">how hashmap works</p>
           </Typography>
         </Link>
       </Grid>
@@ -39,15 +39,19 @@ const Home = () => (
 );
 
 const JavaNote = () => {
+  // Define a state variable javaContent and a function setJavaContent to update its value
   const [javaContent, setJavaContent] = useState('');
 
+  // useEffect is a hook that runs side effects in function components
   useEffect(() => {
+    // Inside useEffect, fetch the content of '/Java.md' file
     fetch('/Java.md')
-      .then(response => response.text())
-      .then(data => setJavaContent(data))
-      .catch(error => console.error('Error fetching Java.md:', error));
-  }, []);
+      .then(response => response.text()) // Convert the response to text
+      .then(data => setJavaContent(data)) // Set the fetched text to the javaContent state
+      .catch(error => console.error('Error fetching Java.md:', error)); // Handle any errors during the fetch
+  }, []); // The empty dependency array means this effect will run once when the component mounts
 
+  // Return the JSX for rendering
   return (
     <Container>
       <ReactMarkdown>{javaContent}</ReactMarkdown>
