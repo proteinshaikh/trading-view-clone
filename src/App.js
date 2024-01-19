@@ -5,34 +5,37 @@ import ReactMarkdown from 'react-markdown';
 import './styles.css'; 
 
 const Home = () => (
+  <>
+    <div className="background-shade"></div>
   <Container>
     <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h4" color="primary">
-          welcome to my notes on technology
+        <Typography variant="h1" color="brown">
+        <p class="p3">Welcome to my notes on technology</p>
         </Typography>
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="body1">
-          here you will find important notes on technology.
+        <Typography style={{ color: 'indigo' }} fontWeight="bold" variant="body1">
+        <p class="p3">here you will find important notes on technology.</p>
         </Typography>
       </Grid>
       <Grid item xs={12}>
         <Link to="/java" style={{ textDecoration: 'none' }}>
-          <Typography color="success" underline="hover" fontWeight="bold">
-            Java important notes
+          <Typography style={{ color: 'black', textDecoration: 'underline' }} fontWeight="bold">
+            <p class="p3">Java important notes</p>
           </Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
         <Link to="/hashmap" style={{ textDecoration: 'none' }}>
-          <Typography color="success" underline="hover" fontWeight="bold">
-            how hashmap works
+          <Typography style={{ color: 'black', textDecoration: 'underline' }} fontWeight="bold">
+          <p class="p3">how hashmap works</p>
           </Typography>
         </Link>
       </Grid>
     </Grid>
   </Container>
+  </>
 );
 
 const JavaNote = () => {
@@ -70,7 +73,7 @@ const HashmapNote = () => {
 };
 
 const App = () => (
-  <Router>
+  <Router basename="/trading-view-clone">
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/java" element={<JavaNote />} />
