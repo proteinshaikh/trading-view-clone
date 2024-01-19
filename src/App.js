@@ -9,18 +9,25 @@ const Home = () => (
     <Grid container spacing={2}>
       <Grid item xs={12}>
         <Typography variant="h4" color="primary">
-          Welcome to my notes on technology
+          welcome to my notes on technology
         </Typography>
       </Grid>
       <Grid item xs={12}>
         <Typography variant="body1">
-          This is a simple website to publish my notes.
+          here you will find important notes on technology.
         </Typography>
       </Grid>
       <Grid item xs={12}>
         <Link to="/java" style={{ textDecoration: 'none' }}>
           <Typography color="success" underline="hover" fontWeight="bold">
             Java important notes
+          </Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
+        <Link to="/hashmap" style={{ textDecoration: 'none' }}>
+          <Typography color="success" underline="hover" fontWeight="bold">
+            how hashmap works
           </Typography>
         </Link>
       </Grid>
@@ -32,7 +39,6 @@ const JavaNote = () => {
   const [javaContent, setJavaContent] = useState('');
 
   useEffect(() => {
-    // Fetch the content of Java.md (replace with your own logic if needed)
     fetch('/Java.md')
       .then(response => response.text())
       .then(data => setJavaContent(data))
@@ -46,11 +52,29 @@ const JavaNote = () => {
   );
 };
 
+const HashmapNote = () => {
+  const [hashmapContent, setHashmapContent] = useState('');
+
+  useEffect(() => {
+    fetch('/javastepbystep.md')
+      .then(response => response.text())
+      .then(data => setHashmapContent(data))
+      .catch(error => console.error('Error fetching javastepbystep.md:', error));
+  }, []);
+
+  return (
+    <Container>
+      <ReactMarkdown>{hashmapContent}</ReactMarkdown>
+    </Container>
+  );
+};
+
 const App = () => (
   <Router>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/java" element={<JavaNote />} />
+      <Route path="/hashmap" element={<HashmapNote />} />
     </Routes>
   </Router>
 );
