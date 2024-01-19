@@ -7,10 +7,10 @@ import './styles.css';
 const Home = () => (
   <>
     <div className="background-shade"></div>
-  <Container>
+  <Container className="main-content">
     <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h1" color="brown">
+        <Typography variant="h3" color="brown">
         <p class="p3">Welcome to my notes on technology</p>
         </Typography>
       </Grid>

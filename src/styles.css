@@ -20,11 +20,12 @@
   .p3 {
     font-family: "Lucida Console", "Courier New", monospace;
   }
-  
+
   body {
     margin: 0;
     overflow: hidden;
-    font-family: 'Roboto', Monospace;
+    font-family: 'Roboto', sans-serif;
+    animation: backgroundAnimation 10s infinite alternate;
   }
   
   .background-shade {
@@ -38,19 +39,22 @@
     animation: gradientAnimation 10s ease infinite;
   }
   
-  @keyframes gradientAnimation {
+  @keyframes backgroundAnimation {
     0% {
-      background-position: 0% 0%;
+      background: linear-gradient(to bottom right, #4285f4, #34a853, #fbbc05, #ea4335);
+    }
+    25% {
+      background: linear-gradient(to bottom right, #ea4335, #4285f4, #34a853, #fbbc05);
+    }
+    50% {
+      background: linear-gradient(to bottom right, #fbbc05, #ea4335, #4285f4, #34a853);
+    }
+    75% {
+      background: linear-gradient(to bottom right, #34a853, #fbbc05, #ea4335, #4285f4);
     }
     100% {
-      background-position: 100% 100%;
+      background: linear-gradient(to bottom right, #4285f4, #34a853, #fbbc05, #ea4335);
     }
   }
 
-  .box{
-    height:200px;
-    width:200px;
-    background:linear-gradient(rgba(250,0,0,0.5),transparent);
-    background-color:orange /*this your primary color*/
-  }
   
