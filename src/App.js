@@ -72,7 +72,7 @@ const HashmapNote = () => {
 const App = () => (
   <Router>
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/java" element={<JavaNote />} />
       <Route path="/hashmap" element={<HashmapNote />} />
     </Routes>
