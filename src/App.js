@@ -2,7 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Container, Typography, Grid } from '@mui/material';
 import ReactMarkdown from 'react-markdown';
-import './styles.css'; 
+import './styles/styles.css'; 
+import './components/MyButton';
+import MyButton from './components/MyButton';
+import Counter from './components/Counter';
+import TechnologyList from './components/TechnologyList';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const Home = () => (
   <>
@@ -13,6 +19,15 @@ const Home = () => (
         <Typography variant="h3" color="brown">
         <p className="p3">Welcome to my notes on technology</p>
         </Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <MyButton />
+      </Grid>
+      <Grid item xs={12}>
+        <Counter />
+      </Grid>
+      <Grid item xs={12}>
+        <TechnologyList />
       </Grid>
       <Grid item xs={12}>
         <Typography style={{ color: 'indigo' }} fontWeight="bold" variant="body1">
@@ -78,11 +93,13 @@ const HashmapNote = () => {
 
 const App = () => (
   <Router basename="/trading-view-clone">
+    <Header />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/java" element={<JavaNote />} />
       <Route path="/hashmap" element={<HashmapNote />} />
-    </Routes>
+     </Routes>
+     <Footer />
   </Router>
 );
 
