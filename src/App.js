@@ -10,7 +10,7 @@ import TechnologyList from './components/TechnologyList';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ApiDataDisplay from './components/ApiDataDisplay';
-import { Dropdown } from 'bootstrap';
+import Dropdown from './components/Dropdown';
 
 
 const options = ['option1','option2'];
@@ -21,14 +21,13 @@ const handleDropdownSelect = (selectedOption) => {
 };
 
 const Home = () => (
-
- 
   <>
     <div className="background-shade"></div>
+  
   <Container className="main-content">
     <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h3" color="brown">
+        <Typography variant="h4" color="brown">
         <p className="p3">Welcome to my notes on technology</p>
         </Typography>
       </Grid>
@@ -68,6 +67,27 @@ const Home = () => (
       </Grid>
     </Grid>
   </Container>
+  <container>
+    <div className='google-container'>
+        <div className='google-text' style={{fontSize: '6em'}}>
+          <span style={{color : '#4285f4'}}>P</span>
+          <span style={{ color: '#ea4335' }}>r</span>
+          <span style={{ color: '#fbbc05' }}>o</span>
+          <span style={{ color: '#34a853' }}> </span>
+          <span style={{ color: '#0f9d58' }}>S</span>
+          <span style={{ color: '#ea4335' }}>e</span>
+          <span style={{ color: '#fbbc05' }}>a</span>
+          <span style={{color : '#4285f4'}}>r</span>
+          <span style={{ color: '#ea4335' }}>c</span>
+          <span style={{ color: '#fbbc05' }}>h</span>
+          
+        </div>
+        <form className='search-form' action='https://www.google.com/search' method='GET'>
+        <input className='search-input' type='text' name='q' placeholder='Search Pro'/>
+        <button className='search-button' type='submit' name='q' placeholder='Pro Search'/>
+        </form>
+    </div>
+    </container>
   </>
 );
 
