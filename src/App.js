@@ -9,8 +9,20 @@ import Counter from './components/Counter';
 import TechnologyList from './components/TechnologyList';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ApiDataDisplay from './components/ApiDataDisplay';
+import { Dropdown } from 'bootstrap';
+
+
+const options = ['option1','option2'];
+
+const handleDropdownSelect = (selectedOption) => {
+  console.log(`selected option: ${selectedOption}`);
+
+};
 
 const Home = () => (
+
+ 
   <>
     <div className="background-shade"></div>
   <Container className="main-content">
@@ -19,6 +31,12 @@ const Home = () => (
         <Typography variant="h3" color="brown">
         <p className="p3">Welcome to my notes on technology</p>
         </Typography>
+      </Grid>
+      <Grid item xs={12}>
+      <Dropdown options={options} onSelect={handleDropdownSelect} />
+      </Grid>
+      <Grid item xs={12}>
+        <ApiDataDisplay />
       </Grid>
       <Grid item xs={12}>
         <MyButton />
@@ -91,9 +109,11 @@ const HashmapNote = () => {
   );
 };
 
+
 const App = () => (
   <Router basename="/trading-view-clone">
     <Header />
+    
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/java" element={<JavaNote />} />
